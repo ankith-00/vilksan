@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* GLOBAL CSS  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROOT CSS */
+:root{
+    --primary-font : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    --secondary-font : 'Quattrocento Sans', sans-serif;
+}
+
+
+/* NAVBAR CSS STARTS HERE*/
+nav{
+    width: 100%;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+    padding: 0 8em 0 8em;
+    position: fixed;
+}
+.logo h1{
+    font-family: var(--primary-font)
+}
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.links img{
+    width: 2.8em;
+    margin-left: 7em;
+    cursor: pointer;
+}
+.links li{
+    list-style: none;
+}
+.links li a{
+    font-family: var(--primary-font);
+    color: #000;
+    font-size: 1.15em;
+    font-weight: 550;
+    text-decoration: none;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.menu-button svg {
+    width: 2.1em;
+    height: 2.1em;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -256px;
+    height: 100vh;
+    width: 256px;
+    background-color: white;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+}
+.sidebar.active {
+    transform: translateX(256px);
+}
+.sidebar-content {
+    padding: 1rem;
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 0.5rem;
+}
+.sidebar-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: var(--primary-font);
+}
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.close-button svg {
+    width: 24px;
+    height: 24px;
+}
+.sidebar-menu {
+    margin-top: 1rem;
+}
+.sidebar-menu a {
+    display: block;
+    color: #000;
+    text-transform: uppercase;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    padding: 0.5rem 0 0 0.2rem;
+    letter-spacing: 1px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+.overlay.active {
+    display: block;
+}
+/* MOBILE VIEW SIDEBAR CSS */
+@media (min-width: 768px) {
+
+    .menu-button {
+        display: none;
+    }
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+    }
+    .sidebar {
+        display: none;
+    }
+    .overlay {
+        display: none !important;
+    }
+}
+/* NAVBAR CSS ENDS HERE */
+
+
+
+/* CONTAINER */
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding-top: 5em;
+    overflow: hidden;
+}
+
+
+/* CONTAINER BOX-1 */
+.container .box-1 {
+    width: 40%;
+    padding: 2em 0 0 5em;
+}
+.container .box-1 img{
+    width: 48%;
+    animation: slideUp 1.5s ease-out forwards;
+}
+.container .box-1 h1{
+    padding-top: 0.2em;
+    opacity: 0;
+    font-family: var(--primary-font);
+    font-size: 8em;
+    font-weight: 600;
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+.container .box-1 p{
+    font-family: var(--secondary-font);
+    font-size: 5em;
+    font-weight: 600;
+    margin-top: -0.3em;
+    opacity: 0;
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 2s;
+}
+.container .box-1 .def{
+    font-size: 1.2em;
+    font-family: var(--secondary-font);
+    opacity: 0;
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 3s;
+}
+
+
+
+/* CONTAINER BOX-2 */
+.container .box-2{
+    width: 60%;
+}
+.container .box-2 img{
+    display: block;
+    position: absolute;
+    width: 35%;
+    object-fit: cover;
+    right: 3.5em;
+    bottom: 1.5em;
+}
+.container .box-2 .img-back{
+    margin-top: 18rem;
+    width: 100%;
+    height: 21em;
+    background-color: #4B5563;
+    display: flex;
+    align-items: flex-end;
+}
+.container .box-2 .img-back button{
+    height: 5em;
+    width: 10em;
+    background-color: #000;
+}
+.mobile-view-info{
+    display: none;
+    opacity: 0;
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+
+/* POPUP */
+.notification_background{
+    display: none;
+    justify-content: center;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+.notification{
+    margin-top: 3.1em;
+    background-color: #fff;
+    width: 35%;
+    height: 90%;
+    border-radius: 0.5em;
+    padding: 1.5em 2em 3em 2em;
+}
+.notification .image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notification .image  img{
+    width: 53%;
+    object-fit: cover;
+    border-radius: 0.5em;
+    margin-top: -1.2em;
+}
+.notification .form form{
+    padding: 1em 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.notification .form h2{
+    font-family: var(--primary-font);
+    padding-bottom:0.8em;
+}
+.notification .form label{
+    font-size: 1.2em;
+    font-family: var(--secondary-font);
+    margin-bottom: 0.3em;
+}
+.notification .form input{
+    padding: 0.5em;
+    margin-bottom: 1.4em;
+    border: 1px solid #000;
+    border-radius: 0.2em;
+}
+.notification .form button{
+    padding: 0.8em;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 0.2em;
+    font-family: var(--secondary-font);
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+#close{
+    z-index: 10;
+    position: relative;
+    float: right;
+    font-size: 1.4em;
+    font-weight: 550;
+    font-family: var(--secondary-font);
+    background: transparent;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ANIMATION */
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* MOBILE VIEW CSS  */
+@media only screen and (max-width: 768px) {
+    nav{
+        height: 4em;
+        padding: 0 1em 0 0.5em;
+    }
+    .links li{
+        display: none;
+    }
+    .links img{
+        width: 2.15em;
+        margin: 0;
+    }
+
+    /* CONTAINER */
+    .container{
+        flex-direction: column;
+    }
+
+    /* CONTAINER BOX-1 */
+    .container .box-1{
+        padding: 0.5em 1em 0 1em;
+    }
+
+    .container .box-1 h1,p{
+        display: none;
+    }
+    
+    .container .box-1 img{
+        width: 120%;
+    }
+
+    /* CONTAINER BOX-2  */
+    .container .box-2{
+        width: 100%;
+        height: fit-content;
+    }
+    .container .box-2 img{
+        width: 88%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+    .container .box-2 .img-back{
+        margin-top: 12em;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .box-2 .img-back button{
+        display: none;
+    }
+
+    /* CONTAINER IMG-BACK WIDGET */
+    .mobile-view-info{
+        display: block;
+        margin-top: 7em;
+    }
+    .mobile-view-info h1{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #fff;
+    }
+    .mobile-view-info .def{
+        font-size: 1.1em;
+        display: block;
+        text-align: center;
+        color: #fff;
+    }
+
+
+    /* POPUP */
+    .notification{
+        width: 93%;
+        height: 80%;
+        padding: 1em 1em;
+    }
+    .notification h3{
+        font-size: 1.1em;
+    }
+    .notification p{
+        font-size: 0.9em;
+    }
+    #close{
+        font-size: 1.3em;
+    }
+}
+

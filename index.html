@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vilksan.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR STARTS HERE-->
+    <nav>
+        <button class="menu-button" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            </svg>
+        </button>
+        <!-- DESKTOP VIEW -->
+        <div class="logo">
+            <h1>VILKSAN</h1>
+        </div>
+        <div class="links">
+            <li><a href="">HOME</a></li>
+            <li><a href="">PRODUCTS</a></li>
+            <img src="src/Cart.png" alt="cart" id="cart">
+        </div>
+    </nav>
+    <!-- SLIDBAR -->
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">VILKSAN</div>
+                <button class="close-button" aria-label="Close menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar-menu">
+                <a href="">Home</a>
+                <a href="">Products</a>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <!-- NAVBAR ENDS HERE -->
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <div class="box-1">
+            <img src="src/barcode.jpg" alt="">
+            <h1>ARRIVING</h1><p>SOON.</p>
+            <p class="def">Where Elegance Meets Innovation.</p> <br> <br> <br>
+            <!-- <p class="def">Let your cloths be your confidance.</p> <br> <br> <br> -->
+            <p class="def">Founded in the heart of fashion capital, Vilksan is a complementery fashion brand that embodies the <br>sprit of modern elegence and innovative design.</p>
+            <!-- <button>Explore</button> -->
+        </div>
+        <div class="box-2">
+            <img src="src/hoodi.png" alt="HOODI VN01" >
+            <div class="img-back">
+                <button></button>
+                <div class="mobile-view-info">
+                    <h1>ARRIVING SOON.</h1>
+                    <p class="def">Where eligance meets innovation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NOTIFICATION DIV  -->
+    <div class="notification_background" id="model">
+
+        <div class="notification">
+            <button id="close">X</button>
+            <div class="image">
+                <img src="src/845c9f2fd419ccb5835ae4c293120f74.jpg" alt="">
+                <button id="close"></button>
+            </div>
+            <div class="form">
+                <form method="post" action="">
+                    <h2>STAY TUNE WITH US !</h2>
+                    <label for="Email">Name</label>
+                    <input type="text" placeholder="Full Name" name="Name">
+                    <label for="Email">Email</label>
+                    <input type="text" placeholder="eg. example@gmail.com" name="Email">
+                    <button type="submit" value="submit" id="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+
+
+            <!-- <button id="close">X</button> -->
+        </div>
+
+    </div>
+         
+</body>
+<script src="script.js"></script>
+</html>
